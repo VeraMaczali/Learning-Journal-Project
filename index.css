@@ -10,6 +10,13 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 }
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -65,7 +72,7 @@ img {
   bottom: 0;
   left: 100%;
   transform: translateX(0);
-  transition: transform 250ms ease-in;
+  transition: all 250ms ease-in;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   backdrop-filter: blur(5px);
@@ -126,7 +133,7 @@ img {
   background-image: url("./img/article-image-hero-mobile.png");
   background-size: cover;
   color: #fff;
-  padding: 2em 0;
+  padding: 2em 0em;
 }
 
 .main-content {
@@ -219,6 +226,41 @@ img {
   font-weight: 700;
 }
 
+/*blog/article page*/
+
+.recent-post {
+  grid-column: 1/-1;
+  padding: 0 2em;
+  margin: 2em 0;
+}
+
+.recent-post-content {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+}
+.recent-post-image {
+  width: 100%;
+  grid-column: span 3;
+  margin: 1em 0;
+}
+
+.article-title {
+  line-height: 1;
+  margin: 0.5em 0;
+}
+
+.recent-post-subtitle {
+  font-size: 1rem;
+  margin: 1em 0;
+}
+
+#posts-title {
+  grid-column: span 3;
+  text-align: center;
+  margin: 2em 0 0 0;
+}
+
 @media (min-width: 600px) {
   /*typography*/
   h1 {
@@ -231,7 +273,10 @@ img {
   }
 
   /*layout*/
-
+  .container {
+    max-width: 75%;
+    margin: 0 auto;
+  }
   .main-grid {
     grid-template-columns: repeat(3, minmax(150px, 500px));
   }
@@ -273,7 +318,7 @@ img {
 
   .main-content {
     grid-column: 1/-2;
-    padding: 20em 0 4em 0;
+    padding: 20em 2em 4em 2em;
   }
 
   /*blog section*/
@@ -283,6 +328,16 @@ img {
   }
   .blog-post:first-child {
     grid-column: 1 / span 1;
+  }
+
+  /*article/blog page*/
+  .recent-post-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .recent-post-subtitle {
+    font-size: 1.5rem;
   }
 }
 
